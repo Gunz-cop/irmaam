@@ -1,0 +1,29 @@
+---
+import { siteConfig } from "@/config/site";
+---
+
+<aside class="disclosure">
+  <strong>Información transparente</strong>
+  <p>{siteConfig.disclosureShort}</p>
+</aside>
+
+<style>
+  .disclosure {
+    border: 1px solid #ead5c9;
+    border-radius: 8px;
+    background: #fff2eb;
+    padding: 18px;
+  }
+
+  strong {
+    display: block;
+    margin-bottom: 6px;
+    color: #7a3442;
+  }
+
+  p {
+    margin: 0;
+    color: #645a52;
+    line-height: 1.65;
+  }
+</style>

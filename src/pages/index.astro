@@ -1,0 +1,220 @@
+---
+import BlogCard from "@/components/BlogCard.astro";
+import CategoryCard from "@/components/CategoryCard.astro";
+import CTASection from "@/components/CTASection.astro";
+import DisclosureBanner from "@/components/DisclosureBanner.astro";
+import Hero from "@/components/Hero.astro";
+import PackageCard from "@/components/PackageCard.astro";
+import ProductCard from "@/components/ProductCard.astro";
+import Layout from "@/layouts/Layout.astro";
+import { featuredPackage } from "@/data/packages";
+import { posts } from "@/data/posts";
+import { featuredProducts } from "@/data/products";
+import { siteConfig } from "@/config/site";
+---
+
+<Layout
+  title="Inicio"
+  description="Demo visual de un sitio personal de recomendaciones de bienestar, belleza y hogar para una IBO independiente."
+>
+  <Hero />
+
+  <section class="section intro-section">
+    <div class="container intro-grid">
+      <div class="content">
+        <p class="eyebrow">Hola, soy {siteConfig.ownerName}</p>
+        <h2>Te ayudo a escoger con calma, en español y sin presión.</h2>
+      </div>
+      <div>
+        <p>
+          Este prototipo muestra cómo podría verse un sitio personal para organizar recomendaciones,
+          explicar productos de forma sencilla y acompañar a familias hispanas en Estados Unidos antes
+          de comprar en el sitio oficial mediante un enlace autorizado.
+        </p>
+        <DisclosureBanner />
+      </div>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Categorías principales</p>
+        <h2>Encuentra recomendaciones por necesidad cotidiana.</h2>
+      </div>
+      <div class="category-grid">
+        <CategoryCard title="Nutrición" text="Opciones demo para organizar una rutina diaria sencilla." href="/productos" tone="nutricion" />
+        <CategoryCard title="Belleza" text="Ideas de cuidado personal con pasos claros y realistas." href="/productos" tone="belleza" />
+        <CategoryCard title="Hogar" text="Productos prácticos para limpieza y organización familiar." href="/productos" tone="hogar" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container steps-grid">
+      <div class="section-heading compact">
+        <p class="eyebrow">Cómo funciona</p>
+        <h2>Un flujo simple para decidir mejor.</h2>
+      </div>
+      <ol class="steps">
+        <li><span>1</span> Exploras recomendaciones.</li>
+        <li><span>2</span> Me escribes si necesitas orientación.</li>
+        <li><span>3</span> Compras en el sitio oficial mediante mi enlace autorizado.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container feature-grid">
+      <div class="content">
+        <p class="eyebrow">Paquete destacado</p>
+        <h2>{featuredPackage.name}</h2>
+        <p>{featuredPackage.description}</p>
+        <a class="btn btn-primary" href={`/paquetes/${featuredPackage.slug}`}>Ver paquete destacado</a>
+      </div>
+      <PackageCard item={featuredPackage} />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Productos destacados</p>
+        <h2>Tres ejemplos para imaginar la experiencia.</h2>
+      </div>
+      <div class="card-grid">
+        {featuredProducts.map((product) => <ProductCard product={product} />)}
+      </div>
+    </div>
+  </section>
+
+  <section class="section trust-section">
+    <div class="container trust-grid">
+      <div>
+        <p class="eyebrow">Confianza y transparencia</p>
+        <h2>Este sitio guía, no vende directamente.</h2>
+      </div>
+      <p>
+        La versión real debería usar información oficial, enlaces autorizados y textos revisados antes
+        de publicar. María sería IBO independiente, no empleada de Amway, y la compra final se realizaría
+        en Amway.com.
+      </p>
+    </div>
+  </section>
+
+  <section class="section section-soft">
+    <div class="container">
+      <div class="section-heading">
+        <p class="eyebrow">Mini blog</p>
+        <h2>Contenido breve para acompañar decisiones.</h2>
+      </div>
+      <div class="card-grid">
+        {posts.map((post) => <BlogCard post={post} />)}
+      </div>
+    </div>
+  </section>
+
+  <CTASection
+    title="¿Quieres ver cómo se sentiría una recomendación personalizada?"
+    text="María podría ayudarte a comparar categorías, resolver dudas básicas y enviarte al enlace oficial cuando estés lista."
+  />
+</Layout>
+
+<style>
+  .intro-grid,
+  .feature-grid,
+  .trust-grid,
+  .steps-grid {
+    display: grid;
+    align-items: start;
+    gap: 34px;
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .intro-grid > div:last-child {
+    display: grid;
+    gap: 20px;
+  }
+
+  .intro-grid p,
+  .trust-grid p {
+    color: var(--soft);
+    line-height: 1.75;
+  }
+
+  .section-heading {
+    max-width: 760px;
+    margin-bottom: 28px;
+  }
+
+  .section-heading h2,
+  .trust-grid h2 {
+    margin: 8px 0 0;
+    font-size: clamp(2rem, 5vw, 3.8rem);
+    line-height: 1.02;
+  }
+
+  .section-heading.compact {
+    margin-bottom: 0;
+  }
+
+  .category-grid,
+  .card-grid {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .steps {
+    display: grid;
+    gap: 14px;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  .steps li {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    border-bottom: 1px solid var(--line);
+    padding: 16px 0;
+    color: #4f5b52;
+    font-weight: 850;
+  }
+
+  .steps span {
+    display: grid;
+    flex: 0 0 38px;
+    height: 38px;
+    place-items: center;
+    border-radius: 50%;
+    background: #e8f1e8;
+    color: #48654d;
+  }
+
+  .feature-grid .btn {
+    margin-top: 18px;
+  }
+
+  .trust-section {
+    background: #2f4038;
+    color: white;
+  }
+
+  .trust-grid p,
+  .trust-grid .eyebrow {
+    color: rgb(255 255 255 / 78%);
+  }
+
+  @media (max-width: 860px) {
+    .intro-grid,
+    .feature-grid,
+    .trust-grid,
+    .steps-grid,
+    .category-grid,
+    .card-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

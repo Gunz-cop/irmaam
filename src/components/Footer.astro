@@ -1,0 +1,54 @@
+---
+import { siteConfig } from "@/config/site";
+---
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <strong>{siteConfig.siteName}</strong>
+      <p>{siteConfig.tagline}</p>
+    </div>
+    <div>
+      <span>Transparencia</span>
+      <p>{siteConfig.disclosureShort}</p>
+    </div>
+    <div>
+      <span>Contacto demo</span>
+      <p>{siteConfig.email}</p>
+    </div>
+  </div>
+</footer>
+
+<style>
+  .site-footer {
+    border-top: 1px solid var(--line);
+    background: #24312b;
+    color: white;
+    padding: 42px 0;
+  }
+
+  .footer-grid {
+    display: grid;
+    gap: 28px;
+    grid-template-columns: 1.2fr 1fr 0.8fr;
+  }
+
+  strong,
+  span {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: 900;
+  }
+
+  p {
+    margin: 0;
+    color: rgb(255 255 255 / 76%);
+    line-height: 1.7;
+  }
+
+  @media (max-width: 760px) {
+    .footer-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

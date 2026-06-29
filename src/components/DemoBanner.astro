@@ -1,0 +1,27 @@
+---
+import { siteConfig } from "@/config/site";
+---
+
+{
+  siteConfig.demoMode && (
+    <div class="demo-banner" role="status">
+      <span>Demo visual</span> contenido simulado, sin ventas reales.
+    </div>
+  )
+}
+
+<style>
+  .demo-banner {
+    background: #24312b;
+    color: white;
+    padding: 10px 16px;
+    text-align: center;
+    font-size: 0.92rem;
+  }
+
+  .demo-banner span {
+    margin-right: 8px;
+    color: #f5c9ba;
+    font-weight: 900;
+  }
+</style>

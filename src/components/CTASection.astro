@@ -1,0 +1,72 @@
+---
+import WhatsAppButton from "@/components/WhatsAppButton.astro";
+
+type Props = {
+  eyebrow?: string;
+  title: string;
+  text: string;
+  primaryHref?: string;
+  primaryLabel?: string;
+};
+
+const {
+  eyebrow = "Acompañamiento",
+  title,
+  text,
+  primaryHref = "/productos",
+  primaryLabel = "Ver productos recomendados",
+} = Astro.props;
+---
+
+<section class="cta-section">
+  <div class="container cta-inner">
+    <div>
+      <p class="eyebrow">{eyebrow}</p>
+      <h2>{title}</h2>
+      <p>{text}</p>
+    </div>
+    <div class="cta-actions">
+      <a class="btn btn-primary" href={primaryHref}>{primaryLabel}</a>
+      <WhatsAppButton label="Pedir ayuda personalizada" />
+    </div>
+  </div>
+</section>
+
+<style>
+  .cta-section {
+    background: #eef4ee;
+    padding: 54px 0;
+  }
+
+  .cta-inner {
+    display: grid;
+    align-items: center;
+    gap: 28px;
+    grid-template-columns: 1.3fr 0.9fr;
+  }
+
+  h2 {
+    margin: 8px 0 12px;
+    font-size: clamp(2rem, 4vw, 3.2rem);
+    line-height: 1.04;
+  }
+
+  p:not(.eyebrow) {
+    max-width: 680px;
+    margin: 0;
+    color: var(--soft);
+    line-height: 1.7;
+  }
+
+  .cta-actions {
+    display: grid;
+    gap: 12px;
+    justify-items: stretch;
+  }
+
+  @media (max-width: 760px) {
+    .cta-inner {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

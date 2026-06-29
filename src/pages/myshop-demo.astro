@@ -1,0 +1,87 @@
+---
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout
+  title="Salida a MyShop demo"
+  description="Página simulada de transición hacia el MyShop oficial autorizado en Amway.com."
+>
+  <section class="page-heading">
+    <div class="container shell">
+      <p class="eyebrow">Transición demo</p>
+      <h1>En la versión real, este botón llevaría al MyShop oficial de María en Amway.com.</h1>
+      <div class="card summary">
+        <span>Resumen seleccionado</span>
+        <p data-item-summary>Producto o paquete demo seleccionado desde el sitio.</p>
+      </div>
+      <p class="notice">
+        Esta pantalla no simula checkout, no procesa pagos y no copia el diseño de Amway. Solo explica
+        dónde ocurriría la compra real mediante enlace autorizado.
+      </p>
+      <div class="actions">
+        <a class="btn btn-primary disabled" href="#" aria-disabled="true">Ir a Amway.com</a>
+        <a class="btn btn-secondary" href="/">Volver al sitio</a>
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<script>
+  const params = new URLSearchParams(window.location.search);
+  const item = params.get("item");
+  const type = params.get("type");
+  const summary = document.querySelector("[data-item-summary]");
+
+  if (summary && item) {
+    summary.textContent = `${type === "paquete" ? "Paquete" : "Producto"}: ${item}`;
+  }
+</script>
+
+<style>
+  .page-heading {
+    background: #fbf3ea;
+    padding: 72px 0;
+    min-height: 70vh;
+  }
+
+  .shell {
+    max-width: 850px;
+  }
+
+  h1 {
+    margin: 10px 0 22px;
+    font-size: clamp(2.6rem, 6vw, 5.2rem);
+    line-height: 1;
+  }
+
+  .summary {
+    padding: 22px;
+  }
+
+  .summary span {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--rose);
+    font-weight: 900;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  .summary p,
+  .notice {
+    color: var(--soft);
+    line-height: 1.75;
+  }
+
+  .actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-top: 24px;
+  }
+
+  .disabled {
+    cursor: not-allowed;
+    opacity: 0.62;
+  }
+</style>

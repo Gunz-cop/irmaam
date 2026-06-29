@@ -1,0 +1,43 @@
+---
+import type { Package } from "@/data/packages";
+
+type Props = {
+  item: Package;
+};
+
+const { item } = Astro.props;
+---
+
+<article class="card package-card">
+  <p class="eyebrow">Paquete recomendado</p>
+  <h3>{item.name}</h3>
+  <p>{item.description}</p>
+  <ul>
+    {item.includes.map((included) => <li>{included}</li>)}
+  </ul>
+  <a class="btn btn-primary" href={`/paquetes/${item.slug}`}>Ver paquete</a>
+</article>
+
+<style>
+  .package-card {
+    padding: 24px;
+  }
+
+  h3 {
+    margin: 8px 0 12px;
+    font-size: 1.45rem;
+  }
+
+  p:not(.eyebrow),
+  li {
+    color: var(--soft);
+    line-height: 1.65;
+  }
+
+  ul {
+    display: grid;
+    gap: 8px;
+    margin: 18px 0 22px;
+    padding-left: 18px;
+  }
+</style>

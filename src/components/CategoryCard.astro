@@ -1,0 +1,40 @@
+---
+type Props = {
+  title: string;
+  text: string;
+  href: string;
+  tone: "nutricion" | "belleza" | "hogar";
+};
+
+const { title, text, href, tone } = Astro.props;
+---
+
+<a class={`category-card tone-${tone}`} href={href}>
+  <span>{title}</span>
+  <p>{text}</p>
+</a>
+
+<style>
+  .category-card {
+    display: grid;
+    min-height: 210px;
+    align-content: end;
+    overflow: hidden;
+    border-radius: 8px;
+    padding: 22px;
+    background:
+      radial-gradient(circle at 76% 18%, rgb(255 255 255 / 60%), transparent 18%),
+      linear-gradient(135deg, var(--tone-a), var(--tone-b));
+  }
+
+  span {
+    font-size: 1.55rem;
+    font-weight: 950;
+  }
+
+  p {
+    margin: 10px 0 0;
+    color: #4e5a51;
+    line-height: 1.6;
+  }
+</style>

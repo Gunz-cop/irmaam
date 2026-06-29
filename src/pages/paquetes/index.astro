@@ -1,0 +1,67 @@
+---
+import CTASection from "@/components/CTASection.astro";
+import PackageCard from "@/components/PackageCard.astro";
+import { packages } from "@/data/packages";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout
+  title="Paquetes recomendados"
+  description="Tres paquetes demo para visualizar recomendaciones combinadas de bienestar, hogar y belleza."
+>
+  <section class="page-heading">
+    <div class="container">
+      <p class="eyebrow">Paquetes demo</p>
+      <h1>Selecciones pensadas para comenzar con claridad.</h1>
+      <p>
+        Cada paquete explica para quién es, qué tipo de productos incluiría y cómo podría ayudar a
+        organizar una compra acompañada.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container package-grid">
+      {packages.map((item) => <PackageCard item={item} />)}
+    </div>
+  </section>
+
+  <CTASection
+    title="Un paquete real debería ajustarse a cada persona."
+    text="Estos ejemplos sirven para conversar. La selección final se haría con información oficial y enlace autorizado."
+    primaryHref="/contacto"
+    primaryLabel="Pedir recomendación"
+  />
+</Layout>
+
+<style>
+  .page-heading {
+    background: #fbf3ea;
+    padding: 72px 0 52px;
+  }
+
+  h1 {
+    max-width: 840px;
+    margin: 10px 0 16px;
+    font-size: clamp(3rem, 7vw, 5.6rem);
+    line-height: 0.96;
+  }
+
+  .page-heading p:not(.eyebrow) {
+    max-width: 720px;
+    color: var(--soft);
+    line-height: 1.75;
+  }
+
+  .package-grid {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  @media (max-width: 860px) {
+    .package-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

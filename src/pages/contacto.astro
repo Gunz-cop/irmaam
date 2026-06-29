@@ -1,0 +1,68 @@
+---
+import DemoContactForm from "@/components/DemoContactForm.astro";
+import WhatsAppButton from "@/components/WhatsAppButton.astro";
+import Layout from "@/layouts/Layout.astro";
+import { siteConfig } from "@/config/site";
+---
+
+<Layout
+  title="Contacto"
+  description="Formulario visual de demostración y enlace a WhatsApp para pedir orientación personalizada."
+>
+  <section class="page-heading">
+    <div class="container contact-grid">
+      <div>
+        <p class="eyebrow">Contacto demo</p>
+        <h1>Cuéntale a {siteConfig.ownerName} qué estás buscando.</h1>
+        <p>
+          Este formulario no envía mensajes reales. En una versión productiva, se conectaría con un
+          servicio de correo o CRM después de validar textos, consentimiento y privacidad.
+        </p>
+        <WhatsAppButton label="Escribir por WhatsApp" className="btn btn-primary" />
+      </div>
+      <div class="card form-shell">
+        <DemoContactForm />
+      </div>
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-heading {
+    background: #fbf3ea;
+    padding: 72px 0;
+  }
+
+  .contact-grid {
+    display: grid;
+    align-items: start;
+    gap: 32px;
+    grid-template-columns: 0.78fr 1fr;
+  }
+
+  h1 {
+    margin: 10px 0 16px;
+    font-size: clamp(3rem, 7vw, 5.6rem);
+    line-height: 0.96;
+  }
+
+  p {
+    max-width: 620px;
+    color: var(--soft);
+    line-height: 1.75;
+  }
+
+  .btn {
+    margin-top: 12px;
+  }
+
+  .form-shell {
+    padding: 24px;
+  }
+
+  @media (max-width: 920px) {
+    .contact-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

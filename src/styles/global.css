@@ -1,0 +1,188 @@
+@import "tailwindcss";
+
+:root {
+  --rose: #b84f62;
+  --coral: #d86f52;
+  --sage: #6f8b6f;
+  --mint: #e8f1e8;
+  --cream: #fff8ef;
+  --paper: #fffdf9;
+  --ink: #24312b;
+  --soft: #6f756f;
+  --line: #e9ded0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+  sans-serif;
+}
+
+h1,
+h2,
+h3,
+p,
+li,
+a,
+button {
+  overflow-wrap: anywhere;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+.container {
+  width: min(1120px, calc(100% - 32px));
+  margin-inline: auto;
+}
+
+.eyebrow {
+  color: var(--rose);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.section {
+  padding: 72px 0;
+}
+
+.section-soft {
+  background: #fbf3ea;
+}
+
+.btn {
+  display: inline-flex;
+  min-height: 46px;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  border-radius: 999px;
+  padding: 0 20px;
+  font-weight: 800;
+  transition:
+    transform 180ms ease,
+    box-shadow 180ms ease,
+    background 180ms ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+}
+
+.btn-primary {
+  background: var(--ink);
+  color: white;
+  box-shadow: 0 14px 30px rgb(36 49 43 / 16%);
+}
+
+.btn-primary:hover {
+  background: #18231e;
+}
+
+.btn-secondary {
+  border: 1px solid var(--line);
+  background: white;
+  color: var(--ink);
+}
+
+.btn-soft {
+  background: #f3e2dc;
+  color: #6d2f3c;
+}
+
+.card {
+  border: 1px solid var(--line);
+  border-radius: 8px;
+  background: white;
+  box-shadow: 0 18px 45px rgb(77 57 39 / 7%);
+}
+
+.product-visual {
+  position: relative;
+  display: grid;
+  min-height: 190px;
+  place-items: center;
+  overflow: hidden;
+  border-radius: 8px 8px 0 0;
+  background:
+    radial-gradient(circle at 78% 18%, rgb(255 255 255 / 48%), transparent 22%),
+    linear-gradient(135deg, var(--tone-a), var(--tone-b));
+}
+
+.product-visual::before {
+  width: 78px;
+  height: 112px;
+  border: 10px solid rgb(255 255 255 / 52%);
+  border-radius: 34px 34px 18px 18px;
+  background: rgb(255 255 255 / 26%);
+  box-shadow:
+    42px 38px 0 -12px rgb(255 255 255 / 38%),
+    -34px 52px 0 -18px rgb(255 255 255 / 42%);
+  content: "";
+}
+
+.product-visual span {
+  position: absolute;
+  right: 16px;
+  bottom: 14px;
+  border-radius: 999px;
+  background: rgb(255 255 255 / 78%);
+  padding: 7px 12px;
+  color: #36413a;
+  font-size: 0.78rem;
+  font-weight: 800;
+}
+
+.tone-nutricion {
+  --tone-a: #dfead4;
+  --tone-b: #f3d8b5;
+}
+
+.tone-belleza {
+  --tone-a: #f5d7df;
+  --tone-b: #ecd6b9;
+}
+
+.tone-hogar {
+  --tone-a: #d8e9ea;
+  --tone-b: #f2dfc8;
+}
+
+.content h2 {
+  margin: 0 0 18px;
+  font-size: clamp(2rem, 5vw, 3.7rem);
+  line-height: 1.02;
+}
+
+.content p {
+  color: var(--soft);
+  line-height: 1.75;
+}
+
+@media (max-width: 720px) {
+  .section {
+    padding: 54px 0;
+  }
+
+  .btn {
+    width: 100%;
+  }
+}

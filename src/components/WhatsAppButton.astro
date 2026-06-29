@@ -1,0 +1,23 @@
+---
+import { siteConfig } from "@/config/site";
+
+type Props = {
+  label?: string;
+  message?: string;
+  className?: string;
+};
+
+const {
+  label = "Preguntar por WhatsApp",
+  message = siteConfig.whatsappMessage,
+  className = "btn btn-soft",
+} = Astro.props;
+
+const cleanPhone = siteConfig.whatsapp.replace(/[^\d]/g, "");
+const href = `https://wa.me/${cleanPhone}?text=${encodeURIComponent(message)}`;
+---
+
+<a class={className} href={href} target="_blank" rel="noreferrer">
+  <span aria-hidden="true">↗</span>
+  {label}
+</a>

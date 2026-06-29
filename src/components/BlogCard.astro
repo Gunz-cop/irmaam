@@ -1,0 +1,40 @@
+---
+import type { Post } from "@/data/posts";
+
+type Props = {
+  post: Post;
+};
+
+const { post } = Astro.props;
+---
+
+<article class="card blog-card">
+  <p class="eyebrow">{post.category}</p>
+  <h3>{post.title}</h3>
+  <p>{post.description}</p>
+  <a href={`/blog/${post.slug}`}>Leer artículo</a>
+</article>
+
+<style>
+  .blog-card {
+    padding: 24px;
+  }
+
+  h3 {
+    margin: 8px 0 12px;
+    font-size: 1.45rem;
+    line-height: 1.18;
+  }
+
+  p:not(.eyebrow) {
+    color: var(--soft);
+    line-height: 1.65;
+  }
+
+  a {
+    display: inline-flex;
+    margin-top: 12px;
+    color: var(--rose);
+    font-weight: 900;
+  }
+</style>

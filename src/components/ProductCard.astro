@@ -1,0 +1,63 @@
+---
+import type { Product } from "@/data/products";
+import WhatsAppButton from "@/components/WhatsAppButton.astro";
+
+type Props = {
+  product: Product;
+};
+
+const { product } = Astro.props;
+const tone = product.category.toLowerCase().normalize("NFD").replace(/\p{Diacritic}/gu, "");
+const message = `Hola María, me gustaría consultar sobre ${product.name}.`;
+---
+
+<article class="card product-card">
+  <div class={`product-visual tone-${tone}`}>
+    <span>{product.imageLabel}</span>
+  </div>
+  <div class="product-body">
+    <p class="category">{product.category}</p>
+    <h3>{product.name}</h3>
+    <p>{product.shortDescription}</p>
+    <div class="actions">
+      <a class="btn btn-primary" href={`/productos/${product.slug}`}>Ver detalle</a>
+      <WhatsAppButton label="Consultar" message={message} className="btn btn-secondary" />
+    </div>
+  </div>
+</article>
+
+<style>
+  .product-card {
+    overflow: hidden;
+  }
+
+  .product-body {
+    padding: 20px;
+  }
+
+  .category {
+    margin: 0 0 8px;
+    color: var(--rose);
+    font-size: 0.78rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
+
+  h3 {
+    margin: 0 0 10px;
+    font-size: 1.35rem;
+  }
+
+  p:not(.category) {
+    margin: 0;
+    color: var(--soft);
+    line-height: 1.65;
+  }
+
+  .actions {
+    display: grid;
+    gap: 10px;
+    margin-top: 18px;
+  }
+</style>

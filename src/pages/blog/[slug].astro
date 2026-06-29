@@ -1,0 +1,69 @@
+---
+import CTASection from "@/components/CTASection.astro";
+import { posts } from "@/data/posts";
+import Layout from "@/layouts/Layout.astro";
+
+export function getStaticPaths() {
+  return posts.map((post) => ({
+    params: { slug: post.slug },
+    props: { post },
+  }));
+}
+
+const { post } = Astro.props;
+---
+
+<Layout title={post.title} description={post.description}>
+  <article>
+    <header class="post-hero">
+      <div class="container">
+        <p class="eyebrow">{post.category}</p>
+        <h1>{post.title}</h1>
+        <p>{post.description}</p>
+      </div>
+    </header>
+
+    <section class="section">
+      <div class="container post-body">
+        {post.body.map((paragraph) => <p>{paragraph}</p>)}
+      </div>
+    </section>
+  </article>
+
+  <CTASection
+    title="¿Quieres hablar sobre una recomendación?"
+    text="El contenido ayuda a orientar, pero la decisión final debe revisar información oficial y enlace autorizado."
+    primaryHref="/blog"
+    primaryLabel="Volver al blog"
+  />
+</Layout>
+
+<style>
+  .post-hero {
+    background: #fbf3ea;
+    padding: 72px 0 52px;
+  }
+
+  h1 {
+    max-width: 900px;
+    margin: 10px 0 16px;
+    font-size: clamp(3rem, 7vw, 5.6rem);
+    line-height: 0.96;
+  }
+
+  .post-hero p:not(.eyebrow) {
+    max-width: 720px;
+    color: var(--soft);
+    line-height: 1.75;
+  }
+
+  .post-body {
+    max-width: 760px;
+  }
+
+  .post-body p {
+    color: #4f5b52;
+    font-size: 1.08rem;
+    line-height: 1.9;
+  }
+</style>

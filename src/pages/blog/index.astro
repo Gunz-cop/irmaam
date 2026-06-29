@@ -1,0 +1,59 @@
+---
+import BlogCard from "@/components/BlogCard.astro";
+import { posts } from "@/data/posts";
+import Layout from "@/layouts/Layout.astro";
+---
+
+<Layout
+  title="Blog"
+  description="Artículos demo con ideas simples para bienestar, hogar y compra con acompañamiento personalizado."
+>
+  <section class="page-heading">
+    <div class="container">
+      <p class="eyebrow">Mini blog visual</p>
+      <h1>Ideas breves para comprar con más claridad.</h1>
+      <p>
+        Contenido de muestra para enseñar cómo María podría educar, orientar y dar contexto sin usar
+        promesas exageradas.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container blog-grid">
+      {posts.map((post) => <BlogCard post={post} />)}
+    </div>
+  </section>
+</Layout>
+
+<style>
+  .page-heading {
+    background: #fbf3ea;
+    padding: 72px 0 52px;
+  }
+
+  h1 {
+    max-width: 840px;
+    margin: 10px 0 16px;
+    font-size: clamp(3rem, 7vw, 5.6rem);
+    line-height: 0.96;
+  }
+
+  .page-heading p:not(.eyebrow) {
+    max-width: 720px;
+    color: var(--soft);
+    line-height: 1.75;
+  }
+
+  .blog-grid {
+    display: grid;
+    gap: 18px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  @media (max-width: 820px) {
+    .blog-grid {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>

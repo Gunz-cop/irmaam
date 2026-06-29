@@ -1,0 +1,98 @@
+---
+import CTASection from "@/components/CTASection.astro";
+import DisclosureBanner from "@/components/DisclosureBanner.astro";
+import Layout from "@/layouts/Layout.astro";
+import { siteConfig } from "@/config/site";
+---
+
+<Layout
+  title="Sobre mí"
+  description="Conoce a María, IBO independiente que acompaña a familias hispanas en Estados Unidos con recomendaciones personalizadas."
+>
+  <section class="page-hero">
+    <div class="container two-col">
+      <div class="content">
+        <p class="eyebrow">Sobre mí</p>
+        <h1>Hola, soy {siteConfig.ownerName}.</h1>
+        <p>
+          Acompaño a familias hispanas en Estados Unidos que quieren entender mejor sus opciones
+          de bienestar, belleza y hogar antes de comprar.
+        </p>
+      </div>
+      <img src="/images/maria-hero.png" alt="María en un ambiente cálido de hogar" />
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container story">
+      <div>
+        <h2>Una guía cercana para elegir con tranquilidad.</h2>
+        <p>
+          La idea de este sitio es que una persona pueda explorar recomendaciones en español, pedir
+          orientación y después revisar la información oficial antes de comprar. María podría explicar
+          categorías, ayudar a comparar opciones y sugerir por dónde empezar según la rutina de cada familia.
+        </p>
+        <p>
+          María sería IBO independiente. Eso significa que no es empleada de Amway y que este sitio personal
+          no representa una tienda oficial. Las compras reales se realizarían mediante enlace autorizado en
+          Amway.com, donde el cliente revisaría los detalles finales.
+        </p>
+      </div>
+      <DisclosureBanner />
+    </div>
+  </section>
+
+  <CTASection
+    title="La compra real siempre debe pasar por el sitio oficial."
+    text="Este demo muestra la experiencia previa: descubrir, preguntar y decidir con acompañamiento personalizado."
+    primaryHref="/contacto"
+    primaryLabel="Ir a contacto"
+  />
+</Layout>
+
+<style>
+  .page-hero {
+    background: #fbf3ea;
+    padding: 72px 0;
+  }
+
+  .two-col,
+  .story {
+    display: grid;
+    align-items: center;
+    gap: 34px;
+    grid-template-columns: 1fr 0.9fr;
+  }
+
+  h1 {
+    margin: 10px 0 16px;
+    font-size: clamp(3rem, 7vw, 5.8rem);
+    line-height: 0.96;
+  }
+
+  img {
+    width: 100%;
+    aspect-ratio: 4 / 3;
+    border-radius: 8px;
+    object-fit: cover;
+    box-shadow: 0 22px 50px rgb(77 57 39 / 14%);
+  }
+
+  h2 {
+    margin: 0 0 16px;
+    font-size: clamp(2rem, 5vw, 3.5rem);
+    line-height: 1.04;
+  }
+
+  p {
+    color: var(--soft);
+    line-height: 1.75;
+  }
+
+  @media (max-width: 820px) {
+    .two-col,
+    .story {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
