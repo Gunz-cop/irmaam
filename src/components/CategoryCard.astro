@@ -3,38 +3,207 @@ type Props = {
   title: string;
   text: string;
   href: string;
-  tone: "nutricion" | "belleza" | "hogar";
+  tone: "nutricion" | "piel" | "belleza" | "cuidado" | "hogar" | "paquetes";
 };
 
 const { title, text, href, tone } = Astro.props;
 ---
 
 <a class={`category-card tone-${tone}`} href={href}>
-  <span>{title}</span>
+  <span class="visual" aria-hidden="true">
+    <span class="product product-a"></span>
+    <span class="product product-b"></span>
+    <span class="accent accent-a"></span>
+    <span class="accent accent-b"></span>
+  </span>
+  <span class="label">{title}<span class="arrow">›</span></span>
   <p>{text}</p>
 </a>
 
 <style>
   .category-card {
-    display: grid;
-    min-height: 210px;
-    align-content: end;
+    display: block;
     overflow: hidden;
-    border-radius: 8px;
-    padding: 22px;
-    background:
-      radial-gradient(circle at 76% 18%, rgb(255 255 255 / 60%), transparent 18%),
-      linear-gradient(135deg, var(--tone-a), var(--tone-b));
+    color: var(--ink);
+    text-align: center;
   }
 
-  span {
-    font-size: 1.55rem;
+  .visual {
+    position: relative;
+    display: grid;
+    width: min(100%, 240px);
+    aspect-ratio: 1;
+    place-items: center;
+    margin: 0 auto 14px;
+    overflow: hidden;
+    border-radius: 50%;
+    background:
+      radial-gradient(circle at 32% 28%, rgb(255 255 255 / 82%), transparent 20%),
+      linear-gradient(145deg, #f1f1ef, #deded9);
+  }
+
+  .visual::after {
+    position: absolute;
+    inset: 18%;
+    border-radius: 50%;
+    background: radial-gradient(circle at center, rgb(255 255 255 / 40%), transparent 58%);
+    content: "";
+  }
+
+  .product,
+  .accent {
+    position: absolute;
+    z-index: 1;
+    display: block;
+  }
+
+  .product-a {
+    width: 58px;
+    height: 106px;
+    border-radius: 18px 18px 12px 12px;
+    background:
+      linear-gradient(var(--label), var(--label)) 50% 42% / 70% 30% no-repeat,
+      linear-gradient(180deg, var(--product-a), var(--product-b));
+    box-shadow: 0 14px 26px rgb(36 49 43 / 14%);
+  }
+
+  .product-b {
+    width: 72px;
+    height: 48px;
+    transform: translate(42px, 36px);
+    border-radius: 16px 16px 12px 12px;
+    background:
+      linear-gradient(var(--label), var(--label)) 50% 52% / 62% 24% no-repeat,
+      linear-gradient(180deg, var(--product-c), var(--product-d));
+    box-shadow: 0 14px 24px rgb(36 49 43 / 12%);
+  }
+
+  .accent {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 20px 10px 0 -8px var(--accent-soft);
+  }
+
+  .accent-a {
+    transform: translate(-58px, 42px);
+  }
+
+  .accent-b {
+    transform: translate(54px, -42px);
+  }
+
+  .label {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    font-size: clamp(1.05rem, 3.8vw, 1.35rem);
     font-weight: 950;
   }
 
+  .arrow {
+    font-size: 1.6rem;
+    line-height: 1;
+  }
+
   p {
-    margin: 10px 0 0;
+    max-width: 250px;
+    margin: 8px auto 0;
     color: #4e5a51;
-    line-height: 1.6;
+    font-size: 0.95rem;
+    line-height: 1.45;
+  }
+
+  .tone-nutricion {
+    --product-a: #f8fbf1;
+    --product-b: #dce9d5;
+    --product-c: #ffffff;
+    --product-d: #f1f3e8;
+    --label: #f6a34b;
+    --accent: #c53b48;
+    --accent-soft: #6a94ca;
+  }
+
+  .tone-piel {
+    --product-a: #88d5d8;
+    --product-b: #3f9ca8;
+    --product-c: #f8ffff;
+    --product-d: #cfd8d4;
+    --label: #f5dfd5;
+    --accent: #f3c2c8;
+    --accent-soft: #f3ead8;
+  }
+
+  .tone-belleza {
+    --product-a: #f7f7f7;
+    --product-b: #ffffff;
+    --product-c: #be263f;
+    --product-d: #8f1f34;
+    --label: #1f1f1f;
+    --accent: #d04863;
+    --accent-soft: #f0c5cf;
+  }
+
+  .tone-cuidado {
+    --product-a: #f8bd84;
+    --product-b: #e98256;
+    --product-c: #f9d7c0;
+    --product-d: #e9b08b;
+    --label: #fff1e5;
+    --accent: #7fb57d;
+    --accent-soft: #d5e5b0;
+  }
+
+  .tone-hogar {
+    --product-a: #f3f6ea;
+    --product-b: #dce8cf;
+    --product-c: #ffffff;
+    --product-d: #e8eee5;
+    --label: #8fba6d;
+    --accent: #f2d35f;
+    --accent-soft: #79a964;
+  }
+
+  .tone-paquetes {
+    --product-a: #f7f5ed;
+    --product-b: #d9d0b9;
+    --product-c: #93d5d8;
+    --product-d: #3d9faa;
+    --label: #f3b66e;
+    --accent: #d94f58;
+    --accent-soft: #7aa56f;
+  }
+
+  .tone-belleza .product-a {
+    width: 44px;
+    height: 96px;
+    transform: rotate(-2deg);
+    border-radius: 8px;
+  }
+
+  .tone-belleza .product-b {
+    width: 28px;
+    height: 94px;
+    transform: translate(30px, 6px);
+    border-radius: 14px 14px 6px 6px;
+  }
+
+  .tone-cuidado .product-a,
+  .tone-hogar .product-a {
+    width: 62px;
+    height: 122px;
+    border-radius: 18px;
+  }
+
+  @media (max-width: 520px) {
+    .visual {
+      width: min(100%, 170px);
+    }
+
+    p {
+      display: none;
+    }
   }
 </style>

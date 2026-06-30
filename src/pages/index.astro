@@ -39,13 +39,16 @@ import { siteConfig } from "@/config/site";
   <section class="section section-soft">
     <div class="container">
       <div class="section-heading">
-        <p class="eyebrow">Categorías principales</p>
-        <h2>Encuentra recomendaciones por necesidad cotidiana.</h2>
+        <p class="eyebrow">Compra por categoría</p>
+        <h2>Encuentra rápido el tipo de producto que quieres consultar.</h2>
       </div>
       <div class="category-grid">
         <CategoryCard title="Nutrición" text="Opciones Nutrilite para organizar una rutina diaria sencilla." href="/productos" tone="nutricion" />
-        <CategoryCard title="Belleza" text="Ideas de cuidado personal con pasos claros y realistas." href="/productos" tone="belleza" />
-        <CategoryCard title="Hogar" text="Productos prácticos para limpieza y organización familiar." href="/productos" tone="hogar" />
+        <CategoryCard title="Cuidado de piel" text="Rutinas Artistry para comparar pasos y preferencias." href="/productos" tone="piel" />
+        <CategoryCard title="Belleza" text="Ideas de cuidado personal con orientación clara." href="/productos" tone="belleza" />
+        <CategoryCard title="Cuidado personal" text="Productos para hábitos diarios y bienestar familiar." href="/productos" tone="cuidado" />
+        <CategoryCard title="Hogar" text="Opciones prácticas para limpieza y organización." href="/productos" tone="hogar" />
+        <CategoryCard title="Paquetes" text="Selecciones agrupadas para empezar con claridad." href="/paquetes" tone="paquetes" />
       </div>
     </div>
   </section>
@@ -162,6 +165,14 @@ import { siteConfig } from "@/config/site";
   .card-grid {
     display: grid;
     gap: 18px;
+  }
+
+  .category-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    row-gap: 32px;
+  }
+
+  .card-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
@@ -212,9 +223,18 @@ import { siteConfig } from "@/config/site";
     .feature-grid,
     .trust-grid,
     .steps-grid,
-    .category-grid,
     .card-grid {
       grid-template-columns: 1fr;
+    }
+
+    .category-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (max-width: 380px) {
+    .category-grid {
+      gap: 24px 12px;
     }
   }
 </style>
