@@ -20,16 +20,56 @@ const myShopHref = `/myshop-demo?item=${encodeURIComponent(item.name)}&type=paqu
   <section class="detail-hero">
     <div class="container detail-grid">
       <div>
-        <p class="eyebrow">Paquete demo</p>
+        <p class="eyebrow">Paquete recomendado</p>
         <h1>{item.name}</h1>
         <p>{item.description}</p>
+        {(item.articleNumber || item.iboPrice || item.retailPrice || item.pvBv || item.rating || item.availability) && (
+          <dl class="commercial-info">
+            {item.articleNumber && (
+              <>
+                <dt>N. de artículo</dt>
+                <dd>{item.articleNumber}</dd>
+              </>
+            )}
+            {item.iboPrice && (
+              <>
+                <dt>Costo al IBO</dt>
+                <dd>{item.iboPrice}</dd>
+              </>
+            )}
+            {item.retailPrice && (
+              <>
+                <dt>Precio minorista</dt>
+                <dd>{item.retailPrice}</dd>
+              </>
+            )}
+            {item.pvBv && (
+              <>
+                <dt>PV / BV</dt>
+                <dd>{item.pvBv}</dd>
+              </>
+            )}
+            {item.rating && (
+              <>
+                <dt>Reseñas</dt>
+                <dd>{item.rating} / 5{item.reviews ? ` (${item.reviews})` : ""}</dd>
+              </>
+            )}
+            {item.availability && (
+              <>
+                <dt>Disponibilidad</dt>
+                <dd>{item.availability}</dd>
+              </>
+            )}
+          </dl>
+        )}
         <div class="actions">
           <a class="btn btn-primary" href={myShopHref}>Comprar en MyShop demo</a>
           <WhatsAppButton label="Pedir recomendación personalizada" message={`Hola María, quiero una recomendación sobre ${item.name}.`} />
         </div>
       </div>
       <aside class="card package-summary">
-        <h2>Productos incluidos simulados</h2>
+        <h2>Productos incluidos</h2>
         <ul>
           {item.includes.map((included) => <li>{included}</li>)}
         </ul>
@@ -95,6 +135,28 @@ const myShopHref = `/myshop-demo?item=${encodeURIComponent(item.name)}&type=paqu
     flex-wrap: wrap;
     gap: 12px;
     margin-top: 24px;
+  }
+
+  .commercial-info {
+    display: grid;
+    max-width: 520px;
+    gap: 10px;
+    grid-template-columns: minmax(140px, auto) 1fr;
+    margin: 22px 0 0;
+    border-top: 1px solid var(--line);
+    padding-top: 18px;
+  }
+
+  .commercial-info dt {
+    color: var(--soft);
+    font-weight: 850;
+  }
+
+  .commercial-info dd {
+    margin: 0;
+    color: var(--ink);
+    font-weight: 900;
+    text-align: right;
   }
 
   .package-summary {

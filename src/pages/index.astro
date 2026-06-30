@@ -15,7 +15,7 @@ import { siteConfig } from "@/config/site";
 
 <Layout
   title="Inicio"
-  description="Demo visual de un sitio personal de recomendaciones de bienestar, belleza y hogar para una IBO independiente."
+  description="Sitio personal de recomendaciones de bienestar y belleza para una IBO independiente."
 >
   <Hero />
 
@@ -27,7 +27,7 @@ import { siteConfig } from "@/config/site";
       </div>
       <div>
         <p>
-          Este prototipo muestra cómo podría verse un sitio personal para organizar recomendaciones,
+          Este sitio muestra cómo María puede organizar recomendaciones,
           explicar productos de forma sencilla y acompañar a familias hispanas en Estados Unidos antes
           de comprar en el sitio oficial mediante un enlace autorizado.
         </p>
@@ -43,7 +43,7 @@ import { siteConfig } from "@/config/site";
         <h2>Encuentra recomendaciones por necesidad cotidiana.</h2>
       </div>
       <div class="category-grid">
-        <CategoryCard title="Nutrición" text="Opciones demo para organizar una rutina diaria sencilla." href="/productos" tone="nutricion" />
+        <CategoryCard title="Nutrición" text="Opciones Nutrilite para organizar una rutina diaria sencilla." href="/productos" tone="nutricion" />
         <CategoryCard title="Belleza" text="Ideas de cuidado personal con pasos claros y realistas." href="/productos" tone="belleza" />
         <CategoryCard title="Hogar" text="Productos prácticos para limpieza y organización familiar." href="/productos" tone="hogar" />
       </div>
@@ -80,7 +80,7 @@ import { siteConfig } from "@/config/site";
     <div class="container">
       <div class="section-heading">
         <p class="eyebrow">Productos destacados</p>
-        <h2>Tres ejemplos para imaginar la experiencia.</h2>
+        <h2>Tres opciones para iniciar la conversación.</h2>
       </div>
       <div class="card-grid">
         {featuredProducts.map((product) => <ProductCard product={product} />)}

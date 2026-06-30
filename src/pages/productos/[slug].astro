@@ -27,6 +27,46 @@ const myShopHref = `/myshop-demo?item=${encodeURIComponent(product.name)}&type=p
         <p class="eyebrow">{product.category}</p>
         <h1>{product.name}</h1>
         <p>{product.description}</p>
+        {(product.articleNumber || product.iboPrice || product.retailPrice || product.pvBv || product.rating || product.availability) && (
+          <dl class="commercial-info">
+            {product.articleNumber && (
+              <>
+                <dt>N. de artículo</dt>
+                <dd>{product.articleNumber}</dd>
+              </>
+            )}
+            {product.iboPrice && (
+              <>
+                <dt>Costo al IBO</dt>
+                <dd>{product.iboPrice}</dd>
+              </>
+            )}
+            {product.retailPrice && (
+              <>
+                <dt>Precio minorista</dt>
+                <dd>{product.retailPrice}</dd>
+              </>
+            )}
+            {product.pvBv && (
+              <>
+                <dt>PV / BV</dt>
+                <dd>{product.pvBv}</dd>
+              </>
+            )}
+            {product.rating && (
+              <>
+                <dt>Reseñas</dt>
+                <dd>{product.rating} / 5{product.reviews ? ` (${product.reviews})` : ""}</dd>
+              </>
+            )}
+            {product.availability && (
+              <>
+                <dt>Disponibilidad</dt>
+                <dd>{product.availability}</dd>
+              </>
+            )}
+          </dl>
+        )}
         <div class="actions">
           <a class="btn btn-primary" href={myShopHref}>Ir al MyShop demo</a>
           <WhatsAppButton message={`Hola María, quiero preguntar por ${product.name}.`} />
@@ -55,7 +95,7 @@ const myShopHref = `/myshop-demo?item=${encodeURIComponent(product.name)}&type=p
 
   <section class="sample-note">
     <div class="container">
-      Información de muestra. Reemplazar por datos reales aprobados antes de publicar.
+      Información de referencia. Confirmar precio, disponibilidad e instrucciones oficiales antes de publicar o comprar.
     </div>
   </section>
 
@@ -96,6 +136,28 @@ const myShopHref = `/myshop-demo?item=${encodeURIComponent(product.name)}&type=p
     flex-wrap: wrap;
     gap: 12px;
     margin-top: 24px;
+  }
+
+  .commercial-info {
+    display: grid;
+    max-width: 520px;
+    gap: 10px;
+    grid-template-columns: minmax(140px, auto) 1fr;
+    margin: 22px 0 0;
+    border-top: 1px solid var(--line);
+    padding-top: 18px;
+  }
+
+  .commercial-info dt {
+    color: var(--soft);
+    font-weight: 850;
+  }
+
+  .commercial-info dd {
+    margin: 0;
+    color: var(--ink);
+    font-weight: 900;
+    text-align: right;
   }
 
   .detail-content {

@@ -19,6 +19,23 @@ const message = `Hola María, me gustaría consultar sobre ${product.name}.`;
     <p class="category">{product.category}</p>
     <h3>{product.name}</h3>
     <p>{product.shortDescription}</p>
+    {(product.articleNumber || product.iboPrice) && (
+      <dl class="product-meta">
+        {product.articleNumber && (
+          <>
+            <dt>Artículo</dt>
+            <dd>{product.articleNumber}</dd>
+          </>
+        )}
+        {product.iboPrice && (
+          <>
+            <dt>Costo IBO</dt>
+            <dd>{product.iboPrice}</dd>
+          </>
+        )}
+      </dl>
+    )}
+    {product.availability && <p class="availability">{product.availability}</p>}
     <div class="actions">
       <a class="btn btn-primary" href={`/productos/${product.slug}`}>Ver detalle</a>
       <WhatsAppButton label="Consultar" message={message} className="btn btn-secondary" />
@@ -53,6 +70,32 @@ const message = `Hola María, me gustaría consultar sobre ${product.name}.`;
     margin: 0;
     color: var(--soft);
     line-height: 1.65;
+  }
+
+  .product-meta {
+    display: grid;
+    gap: 8px;
+    grid-template-columns: auto 1fr;
+    margin: 16px 0 0;
+    color: var(--soft);
+    font-size: 0.92rem;
+  }
+
+  dt {
+    font-weight: 850;
+  }
+
+  dd {
+    margin: 0;
+    color: var(--ink);
+    font-weight: 850;
+    text-align: right;
+  }
+
+  .availability {
+    margin-top: 12px !important;
+    color: #2d7a59 !important;
+    font-weight: 850;
   }
 
   .actions {

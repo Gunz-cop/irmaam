@@ -6,68 +6,95 @@ export type Package = {
   includes: string[];
   practicalBenefit: string;
   routine: string[];
+  articleNumber?: string;
+  iboPrice?: string;
+  retailPrice?: string;
+  pvBv?: string;
+  rating?: string;
+  reviews?: string;
+  availability?: string;
 };
 
 export const packages: Package[] = [
   {
-    slug: "bienestar-diario",
-    name: "Paquete Bienestar Diario",
+    slug: "nutrilite-paquete-hombres",
+    name: "Nutrilite Paquete para hombres",
     description:
-      "Una combinación demo para personas que quieren empezar con una rutina sencilla de productos de uso diario.",
+      "Selección Nutrilite para iniciar una rutina diaria organizada con productos pensados para hombres.",
     forWhom:
-      "Para quienes desean organizar hábitos básicos y prefieren recibir orientación antes de elegir.",
+      "Para hombres que prefieren empezar con un paquete ya agrupado y recibir orientación antes de comprar.",
     includes: [
-      "Producto demo de nutrición cotidiana",
-      "Bebida o mezcla práctica",
-      "Guía breve de organización semanal",
+      "Paquete Nutrilite para hombres",
+      "Referencia de uso desde la ficha oficial",
+      "Orientación de María para revisar hábitos y presupuesto",
     ],
     practicalBenefit:
-      "Ayuda a tener una conversación clara sobre qué productos podrían encajar en el día a día.",
+      "Permite conversar sobre una selección inicial sin tener que elegir cada producto por separado.",
     routine: [
-      "Elegir un momento fijo para revisar la rutina.",
-      "Consultar la información oficial de cada producto real.",
-      "Ajustar la selección según gustos, presupuesto y preferencias.",
+      "Revisar el paquete y confirmar disponibilidad en Amway.",
+      "Leer instrucciones oficiales de cada producto incluido.",
+      "Ajustar la compra según rutina, presupuesto y preferencias.",
     ],
+    articleNumber: "123365",
+    iboPrice: "$66.60",
+    retailPrice: "$74.00",
+    pvBv: "19+2 / 66.60",
+    rating: "5",
+    reviews: "395",
+    availability: "En existencia",
   },
   {
-    slug: "hogar-practico",
-    name: "Paquete Hogar Práctico",
+    slug: "nutrilite-paquete-mujeres",
+    name: "Nutrilite Paquete para mujeres",
     description:
-      "Selección demo para limpieza y organización de zonas de uso frecuente en casa.",
+      "Selección Nutrilite para presentar una rutina diaria sencilla y acompañada para mujeres.",
     forWhom:
-      "Para familias que desean simplificar compras de hogar y entender qué usar en cada espacio.",
+      "Para mujeres que desean comparar una opción agrupada antes de escoger productos individuales.",
     includes: [
-      "Limpiador demo para uso cotidiano",
-      "Producto demo para cocina",
-      "Notas de rutina semanal",
+      "Paquete Nutrilite para mujeres",
+      "Referencia de uso desde la ficha oficial",
+      "Acompañamiento para resolver dudas antes de comprar",
     ],
     practicalBenefit:
-      "Facilita ordenar productos por espacio: cocina, baño, superficies y reposición.",
+      "Ayuda a iniciar una conversación clara sobre necesidades, horarios y preferencia de productos.",
     routine: [
-      "Identificar los espacios donde más se necesita apoyo.",
-      "Separar productos por frecuencia de uso.",
-      "Revisar instrucciones oficiales antes de comprar.",
+      "Confirmar que el paquete esté disponible en el sitio oficial.",
+      "Revisar detalles de uso e ingredientes publicados por Amway.",
+      "Decidir si el paquete completo tiene sentido o si conviene elegir productos sueltos.",
     ],
+    articleNumber: "123372",
+    iboPrice: "$53.10",
+    retailPrice: "$59.00",
+    pvBv: "15.48 / 53.10",
+    rating: "5",
+    reviews: "522",
+    availability: "En existencia",
   },
   {
-    slug: "belleza-esencial",
-    name: "Paquete Belleza Esencial",
+    slug: "artistry-skin-nutrition-sistema-renovador",
+    name: "Paquete sistema renovador Artistry Skin Nutrition",
     description:
-      "Paquete demo para visualizar una rutina básica de cuidado personal con pocos pasos.",
+      "Sistema Artistry Skin Nutrition para organizar una rutina facial renovadora por pasos.",
     forWhom:
-      "Para personas que quieren empezar con una selección clara y acompañada.",
+      "Para personas interesadas en una rutina de belleza más completa, guiada y fácil de seguir.",
     includes: [
-      "Producto demo de cuidado personal",
-      "Producto demo complementario",
-      "Recomendación de orden de uso",
+      "Productos del sistema renovador Artistry Skin Nutrition",
+      "Referencia de orden de uso según información oficial",
+      "Consulta con María para revisar tipo de rutina y preferencias",
     ],
     practicalBenefit:
-      "Reduce la confusión inicial al comparar opciones y ayuda a elegir con calma.",
+      "Evita escoger productos de belleza al azar y permite revisar una rutina completa antes de comprar.",
     routine: [
-      "Empezar con una rutina breve.",
-      "Observar preferencias de textura y horario.",
-      "Comprar solo lo que tenga sentido para la persona.",
+      "Revisar el sistema completo y confirmar disponibilidad.",
+      "Leer el modo de uso oficial de cada paso.",
+      "Ajustar la rutina según preferencias, sensibilidad y presupuesto.",
     ],
+    articleNumber: "266694",
+    iboPrice: "$129.60",
+    retailPrice: "$144.00",
+    pvBv: "37.77 / 129.60",
+    reviews: "0",
+    availability: "En existencia",
   },
 ];
 

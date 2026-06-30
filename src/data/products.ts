@@ -10,104 +10,244 @@ export type Product = {
   usage: string;
   mariaReason: string;
   imageLabel: string;
+  articleNumber?: string;
+  iboPrice?: string;
+  retailPrice?: string;
+  pvBv?: string;
+  rating?: string;
+  reviews?: string;
+  availability?: string;
 };
 
 export const products: Product[] = [
   {
-    slug: "mezcla-diaria-nutricion",
-    name: "Mezcla Diaria de Nutrición",
+    slug: "nutrilite-paquete-hombres",
+    name: "Nutrilite Paquete para hombres",
     category: "Nutrición",
     shortDescription:
-      "Una opción sencilla para acompañar desayunos o meriendas con una rutina más organizada.",
+      "Selección Nutrilite enfocada en una rutina diaria práctica para hombres.",
     description:
-      "Producto demo pensado para personas que buscan ordenar sus mañanas y tener una alternativa práctica dentro de una rutina diaria. La información final deberá reemplazarse por datos oficiales antes de publicar.",
+      "Paquete de referencia tomado del catálogo Amway para conversar sobre una rutina inicial de nutrición cotidiana. Antes de comprar, conviene revisar la ficha oficial, disponibilidad y recomendaciones de uso.",
     forWhom:
-      "Puede servir para familias que desean planificar mejor sus opciones de uso diario sin complicarse.",
+      "Para hombres que quieren empezar con una selección organizada y prefieren orientación antes de elegir productos por separado.",
     usage:
-      "En esta demo se presenta como una mezcla que se prepararía siguiendo la información oficial del producto real.",
+      "Se debe usar siguiendo las indicaciones oficiales de cada producto incluido en el paquete.",
     mariaReason:
-      "María lo recomendaría cuando alguien quiere comenzar con algo simple, fácil de entender y adaptable al ritmo de la casa.",
-    imageLabel: "Rutina diaria",
+      "María lo puede usar como punto de partida para hablar de hábitos, horarios y presupuesto sin complicar la primera compra.",
+    imageLabel: "Hombres",
+    articleNumber: "123365",
+    iboPrice: "$66.60",
+    retailPrice: "$74.00",
+    pvBv: "19+2 / 66.60",
+    rating: "5",
+    reviews: "395",
+    availability: "En existencia",
   },
   {
-    slug: "bebida-practica-bienestar",
-    name: "Bebida Práctica de Bienestar",
+    slug: "nutrilite-paquete-mujeres",
+    name: "Nutrilite Paquete para mujeres",
     category: "Nutrición",
     shortDescription:
-      "Formato demo para quienes prefieren opciones listas para integrar a una agenda ocupada.",
+      "Paquete Nutrilite para organizar una rutina diaria sencilla para mujeres.",
     description:
-      "Ejemplo de producto de nutrición cotidiana con enfoque práctico. No incluye precio ni promesas de resultados; sirve para mostrar cómo se vería una recomendación responsable.",
+      "Selección de referencia para presentar opciones Nutrilite de forma clara y acompañada. La información final de ingredientes, uso y disponibilidad debe confirmarse en Amway.",
     forWhom:
-      "Puede servir para adultos con días movidos que quieren conversar con María sobre opciones simples.",
+      "Para mujeres que desean comparar una selección inicial antes de comprar productos individuales.",
     usage:
-      "Se usaría según la etiqueta e información oficial del producto real elegido por la IBO.",
+      "Cada producto del paquete debe revisarse y utilizarse según la información oficial del fabricante.",
     mariaReason:
-      "María lo sugeriría como punto de conversación para entender hábitos, horarios y preferencias.",
-    imageLabel: "Uso diario",
+      "María lo recomendaría cuando alguien quiere una opción ya agrupada para empezar con más claridad.",
+    imageLabel: "Mujeres",
+    articleNumber: "123372",
+    iboPrice: "$53.10",
+    retailPrice: "$59.00",
+    pvBv: "15.48 / 53.10",
+    rating: "5",
+    reviews: "522",
+    availability: "En existencia",
   },
   {
-    slug: "crema-suave-cuidado",
-    name: "Crema Suave de Cuidado",
+    slug: "artistry-skin-nutrition-sistema-renovador",
+    name: "Paquete sistema renovador Artistry Skin Nutrition",
     category: "Belleza",
     shortDescription:
-      "Producto demo para una rutina de cuidado personal tranquila, sin pasos complicados.",
+      "Sistema Artistry Skin Nutrition para una rutina de cuidado facial por pasos.",
     description:
-      "Ejemplo visual de un producto de belleza para uso personal. El texto real debe basarse en información aprobada y clara, sin exageraciones.",
+      "Paquete de cuidado personal Artistry Skin Nutrition para presentar una rutina facial organizada. La recomendación debe acompañarse con la información oficial de uso y compatibilidad con cada tipo de piel.",
     forWhom:
-      "Puede servir para personas que buscan una rutina sencilla y acompañamiento para escoger el orden de uso.",
+      "Para personas interesadas en una rutina de belleza más completa y guiada.",
     usage:
-      "En la versión real se explicaría el modo de uso recomendado por la información oficial.",
+      "Se usa siguiendo el orden y las instrucciones oficiales de los productos incluidos.",
     mariaReason:
-      "María lo destacaría para quienes quieren empezar por un producto básico y fácil de incorporar.",
-    imageLabel: "Cuidado suave",
+      "María lo puede presentar cuando alguien busca una opción de belleza estructurada en vez de elegir productos sueltos.",
+    imageLabel: "Artistry",
+    articleNumber: "266694",
+    iboPrice: "$129.60",
+    retailPrice: "$144.00",
+    pvBv: "37.77 / 129.60",
+    reviews: "0",
+    availability: "En existencia",
   },
   {
-    slug: "kit-basico-belleza",
-    name: "Kit Básico de Belleza",
-    category: "Belleza",
+    slug: "salud-vision-nutrilite",
+    name: "Salud de la visión Nutrilite",
+    category: "Nutrición",
     shortDescription:
-      "Selección demo para organizar pasos simples de cuidado personal durante la semana.",
+      "Producto Nutrilite para conversar sobre apoyo nutricional diario relacionado con la visión.",
     description:
-      "Producto agrupado de muestra para representar una rutina inicial de belleza. La selección real dependerá de disponibilidad, preferencia y guía oficial.",
+      "Producto de referencia del catálogo Nutrilite. Esta ficha sirve para orientar la conversación, no para sustituir la etiqueta, indicaciones oficiales o consejo profesional.",
     forWhom:
-      "Puede servir para quienes desean comparar opciones antes de decidir qué comprar.",
+      "Para personas que preguntan por opciones Nutrilite específicas y desean revisar detalles antes de comprar.",
     usage:
-      "María explicaría cada paso con base en los productos reales y sus instrucciones oficiales.",
+      "Debe utilizarse según la etiqueta oficial y las recomendaciones disponibles en Amway.",
     mariaReason:
-      "María lo recomendaría como una forma ordenada de empezar sin comprar cosas que no se necesitan.",
-    imageLabel: "Rutina simple",
+      "María lo incluiría cuando la persona ya tiene una necesidad concreta y quiere comparar opciones con calma.",
+    imageLabel: "Visión",
+    articleNumber: "124708",
+    iboPrice: "$31.50",
+    retailPrice: "$35.00",
+    pvBv: "9.18 / 31.50",
+    rating: "5",
+    reviews: "40",
+    availability: "En existencia",
   },
   {
-    slug: "limpiador-hogar-diario",
-    name: "Limpiador de Hogar Diario",
-    category: "Hogar",
+    slug: "salud-cabello-piel-unas-nutrilite",
+    name: "Salud del cabello, piel y uñas Nutrilite",
+    category: "Nutrición",
     shortDescription:
-      "Opción práctica para mostrar recomendaciones de limpieza cotidiana y organización.",
+      "Opción Nutrilite para una rutina de cuidado personal desde la nutrición.",
     description:
-      "Producto demo para representar una solución de limpieza del hogar. El contenido final deberá usar nombres, instrucciones y avisos oficiales.",
+      "Producto Nutrilite de referencia para quienes desean conversar sobre cabello, piel y uñas dentro de una rutina diaria. La información aprobada debe confirmarse en la ficha oficial.",
     forWhom:
-      "Puede servir para familias que quieren simplificar la limpieza semanal con productos de uso diario.",
+      "Para personas que buscan una opción enfocada en cuidado personal y quieren revisar ingredientes, uso y disponibilidad.",
     usage:
-      "Se utilizaría siguiendo las indicaciones del producto real y las superficies recomendadas.",
+      "Debe usarse de acuerdo con las indicaciones oficiales del producto.",
     mariaReason:
-      "María lo incluiría para quienes preguntan por opciones prácticas, rendidoras y fáciles de explicar.",
-    imageLabel: "Casa práctica",
+      "María lo puede sugerir como tema de consulta cuando alguien pregunta por belleza y bienestar en una misma conversación.",
+    imageLabel: "Cabello y piel",
+    articleNumber: "A7553",
+    iboPrice: "$23.40",
+    retailPrice: "$26.00",
+    pvBv: "6.82 / 23.40",
+    rating: "4.8",
+    reviews: "92",
+    availability: "En existencia",
   },
   {
-    slug: "spray-multiuso-cocina",
-    name: "Spray Multiuso de Cocina",
-    category: "Hogar",
+    slug: "probiotico-balance-within-nutrilite",
+    name: "Probiótico Balance Within de Nutrilite",
+    category: "Nutrición",
     shortDescription:
-      "Demo de producto para áreas de uso frecuente, con enfoque en hábitos simples de limpieza.",
+      "Probiótico Nutrilite para revisar dentro de una rutina nutricional acompañada.",
     description:
-      "Ejemplo de tarjeta para producto del hogar sin precio ni promesas. La versión publicada debe reemplazar este texto por contenido aprobado.",
+      "Producto de referencia para conversar sobre opciones Nutrilite de uso diario. La compra debe hacerse revisando la ficha oficial, advertencias y disponibilidad vigente.",
     forWhom:
-      "Puede servir para hogares que desean mantener una rutina de limpieza más ordenada.",
+      "Para personas interesadas en ordenar su rutina nutricional y hacer preguntas antes de decidir.",
     usage:
-      "En una ficha real se indicarían superficies, frecuencia y precauciones según la fuente oficial.",
+      "Usar únicamente según las indicaciones oficiales del producto.",
     mariaReason:
-      "María lo sugeriría dentro de conversaciones sobre cocina, familia y limpieza cotidiana.",
-    imageLabel: "Cocina limpia",
+      "María lo puede recomendar como una opción para evaluar cuando la persona busca productos Nutrilite específicos.",
+    imageLabel: "Probiótico",
+    articleNumber: "120571",
+    iboPrice: "$38.70",
+    retailPrice: "$43.00",
+    pvBv: "11.28 / 38.70",
+    rating: "4.9",
+    reviews: "282",
+    availability: "En existencia",
+  },
+  {
+    slug: "tubitos-2go-nutrilite-paquete-surtido",
+    name: "Tubitos 2GO de Nutrilite - Paquete surtido",
+    category: "Nutrición",
+    shortDescription:
+      "Paquete surtido en formato práctico para llevar y preparar durante el día.",
+    description:
+      "Producto Nutrilite de formato conveniente para personas que prefieren opciones fáciles de integrar a su agenda. Revisar disponibilidad antes de recomendarlo.",
+    forWhom:
+      "Para personas con días movidos que quieren una opción práctica y fácil de transportar.",
+    usage:
+      "Preparar y consumir de acuerdo con la etiqueta oficial del producto.",
+    mariaReason:
+      "María lo puede mencionar cuando alguien busca algo práctico para llevar, siempre verificando inventario primero.",
+    imageLabel: "2GO",
+    articleNumber: "110922",
+    iboPrice: "$21.60",
+    retailPrice: "$24.00",
+    pvBv: "6.29 / 21.60",
+    rating: "4.9",
+    reviews: "107",
+    availability: "Pedido en espera. Disponibilidad esperada 07/06/2026",
+  },
+  {
+    slug: "concentrado-frutas-verduras-nutrilite",
+    name: "Concentrado de frutas y verduras Nutrilite",
+    category: "Nutrición",
+    shortDescription:
+      "Producto Nutrilite para complementar una rutina diaria con enfoque en frutas y verduras.",
+    description:
+      "Opción de referencia del catálogo Nutrilite para quienes desean conversar sobre complementos de uso diario. La información nutricional final debe tomarse de la ficha oficial.",
+    forWhom:
+      "Para personas que desean revisar alternativas Nutrilite relacionadas con hábitos diarios de alimentación.",
+    usage:
+      "Debe usarse siguiendo la etiqueta e información oficial del producto.",
+    mariaReason:
+      "María lo incluiría en una conversación cuando alguien quiere una rutina sencilla y fácil de explicar.",
+    imageLabel: "Frutas y verduras",
+    articleNumber: "100648",
+    iboPrice: "$41.40",
+    retailPrice: "$46.00",
+    pvBv: "12.07 / 41.40",
+    rating: "5",
+    reviews: "86",
+    availability: "En existencia",
+  },
+  {
+    slug: "vitamina-c-accion-prolongada-nutrilite",
+    name: "Vitamina C de acción prolongada Nutrilite",
+    category: "Nutrición",
+    shortDescription:
+      "Vitamina C Nutrilite para revisar como parte de una rutina diaria.",
+    description:
+      "Producto de referencia para orientar preguntas sobre vitamina C dentro del catálogo Nutrilite. Confirmar siempre dosis, advertencias y detalles oficiales antes de comprar.",
+    forWhom:
+      "Para personas que ya buscan vitamina C y quieren comparar una opción de Amway con acompañamiento.",
+    usage:
+      "Usar de acuerdo con la etiqueta oficial y las instrucciones publicadas por Amway.",
+    mariaReason:
+      "María lo puede presentar cuando alguien pide una opción específica y quiere revisar precio, artículo y disponibilidad.",
+    imageLabel: "Vitamina C",
+    articleNumber: "109747",
+    iboPrice: "$48.60",
+    retailPrice: "$54.00",
+    pvBv: "14.17 / 48.60",
+    rating: "5",
+    reviews: "1013",
+    availability: "En existencia",
+  },
+  {
+    slug: "comida-completa-polvo-nutrilite-organics-vainilla",
+    name: "Comida completa en polvo Nutrilite Organics - Vainilla",
+    category: "Nutrición",
+    shortDescription:
+      "Comida completa en polvo sabor vainilla para una opción práctica dentro de la rutina.",
+    description:
+      "Producto Nutrilite Organics de referencia para quienes buscan una opción en polvo. La recomendación debe confirmar ingredientes, preparación y uso oficial antes de comprar.",
+    forWhom:
+      "Para personas que quieren una opción práctica de preparación y desean revisar si encaja con su rutina.",
+    usage:
+      "Preparar según las instrucciones oficiales del empaque y la ficha del producto.",
+    mariaReason:
+      "María lo puede recomendar como una alternativa práctica cuando la persona busca algo fácil de preparar.",
+    imageLabel: "Vainilla",
+    articleNumber: "318671",
+    iboPrice: "$63.00",
+    retailPrice: "$70.00",
+    pvBv: "18.36 / 63.00",
+    rating: "5",
+    reviews: "25",
+    availability: "En existencia",
   },
 ];
 
